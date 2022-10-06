@@ -3,8 +3,10 @@ import styled from "styled-components";
 export default function ProductCard({ product, index }) {
   console.log(product)
   //images[0].fields.file.url
+  // README
+  const bg = product.images !== undefined && product.images.length ? product.images[0].fields.file.url : "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/A_Specimen_by_William_Caslon.jpg/1280px-A_Specimen_by_William_Caslon.jpg"
   return (
-    <Wrapper>
+    <Wrapper background={bg}>
       <TextContainer>
         <Title>{product.title}</Title>
         <Subtitle>{product.price}</Subtitle>
