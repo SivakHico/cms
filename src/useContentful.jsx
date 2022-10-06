@@ -2,7 +2,7 @@ import { createClient } from "contentful"
 
 export default function useContentful() {
     const client = createClient({
-        space: "flewdw23aevu",
+        space: import.meta.env.VITE_spaceID,
         accessToken: import.meta.env.VITE_accessToken,
         host: "preview.contentful.com"
     })
