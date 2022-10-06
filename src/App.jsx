@@ -9,11 +9,11 @@ function App() {
 
   useEffect(() => {
     getProducts().then((response) => setProducts(response));
-  });
+  }, []);
 
   return (
     <div className="App">
-      {products.filter(p => p.images).map((product, index) => (
+      {products.map((product, index) => (
         <ProductCard key={index} product={product} />
       ))}
     </div>

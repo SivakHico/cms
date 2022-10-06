@@ -2,8 +2,8 @@ import { createClient } from "contentful"
 
 export default function useContentful() {
     const client = createClient({
-        space: "flewdw23aevu",
-        accessToken: "N2mgaQjwzUqKwC-Scq1IH9y_qtJ-dJsc_NisOunPfX8",
+        space: import.meta.env.VITE_spaceID,
+        accessToken: import.meta.env.VITE_accessToken,
         host: "preview.contentful.com"
     })
 
@@ -15,12 +15,10 @@ export default function useContentful() {
             });
             const sanitizedEntries = entries.items.map((item) => {
                 const images = item.fields.images;
-                console.log(images)
                 return {
                     ...item.fields,
                     images
                 };
-                
             });
             return sanitizedEntries;
         } catch (error) {

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
-export default function ProductCard({ product, index }) {
+export default function ProductCard({ product }) {
   console.log(product)
-  //images[0].fields.file.url
+  const bg =  product.images !== undefined && product.images.length? product.images[0].fields.file.url : 'https://media.wired.com/photos/5a207b8740ed7f46060c7dda/master/w_2560%2Cc_limit/lucid-roundup-TA.jpg'
   return (
-    <Wrapper>
+    <Wrapper background={bg}>
       <TextContainer>
         <Title>{product.title}</Title>
         <Subtitle>{product.price}</Subtitle>
